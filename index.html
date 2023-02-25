@@ -50,7 +50,7 @@
           <h3>Pages:</h3>
           <h3>Language:</h3>
           <div class="d-grid gap-2 mt-2">
-            <button class="btn btn-outline-success fw-semibold" type="button">
+            <button class="btn btn-outline-primary fw-semibold" type="button">
               Read
             </button>
             <button
@@ -77,74 +77,88 @@
             ></button>
           </div>
           <div class="modal-body">
-            <!-- Title -->
-            <div class="mb-1">
-              <label for="book-title" class="form-label">Book Title</label>
-              <input
-                type="text"
-                class="form-control"
-                id="book-title"
-                placeholder="Book Title"
-              />
-            </div>
+            <form id="modal-form">
+              <!-- Title -->
+              <div class="mb-1">
+                <label for="book-title" class="form-label">Book Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="book-title"
+                  placeholder="Book Title"
+                  required
+                />
+              </div>
 
-            <!-- Author -->
-            <div class="mb-1">
-              <label for="author-name" class="form-label">Author Name</label>
-              <input
-                type="text"
-                class="form-control"
-                id="author-name"
-                placeholder="Author Name"
-              />
-            </div>
+              <!-- Author -->
+              <div class="mb-1">
+                <label for="author-name" class="form-label">Author Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="author-name"
+                  placeholder="Author Name"
+                  required
+                />
+              </div>
 
-            <!-- Pages -->
-            <div class="mb-1">
-              <label for="pages-number" class="form-label">Pages Number</label>
-              <input
-                type="number"
-                class="form-control"
-                id="pages-number"
-                placeholder="Pages Number"
-              />
-            </div>
+              <!-- Pages -->
+              <div class="mb-1">
+                <label for="pages-number" class="form-label"
+                  >Pages Number</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="pages-number"
+                  placeholder="Pages Number"
+                  required
+                />
+              </div>
 
-            <!-- Language -->
-            <div class="mb-1">
-              <label for="book-language" class="form-label"
-                >Book Language</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                id="book-language"
-                placeholder="Book Language"
-              />
-            </div>
+              <!-- Language -->
+              <div class="mb-1">
+                <label for="book-language" class="form-label"
+                  >Book Language</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="book-language"
+                  placeholder="Book Language"
+                  required
+                />
+              </div>
 
-            <!-- Read -->
-            <div class="form-check mt-2">
-              <label class="form-check-label" for="flexCheckDefault">
-                I have read the book
-              </label>
-              <input
-                class="form-check-input"
-                type="checkbox"
-                value=""
-                id="flexCheckDefault"
-              />
-            </div>
+              <!-- Read -->
+              <div class="form-check mt-2">
+                <label class="form-check-label" for="flexCheckDefault">
+                  I have read the book
+                </label>
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="flexCheckDefault"
+                />
+              </div>
+            </form>
           </div>
           <div class="modal-footer">
             <button
               type="button"
-              class="btn btn-secondary"
+              class="btn btn-secondary px-4"
               data-bs-dismiss="modal"
             >
               Close
             </button>
-            <button type="button" class="btn btn-success">Save</button>
+            <button
+              type="submit"
+              id="modal-submit-button"
+              class="btn btn-success px-4"
+              form="modal-form"
+            >
+              Save
+            </button>
           </div>
         </div>
       </div>
