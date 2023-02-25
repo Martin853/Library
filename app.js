@@ -66,10 +66,31 @@ function updateCardHolder() {
 
 // Modal
 
+const bookTitleForm = document.querySelector("#book-title");
+const bookAuthorForm = document.querySelector("#author-name");
+const bookPagesForm = document.querySelector("#pages-number");
+const bookLanguageForm = document.querySelector("#book-language");
+const bookHaveReadForm = document.querySelector("#flexCheckDefault");
+
+// Modal Set to default values
+function setToDefault() {
+  bookTitleForm.value = "";
+  bookAuthorForm.value = "";
+  bookPagesForm.value = "";
+  bookLanguageForm.value = "";
+  bookHaveReadForm.checked = false;
+}
+
 // Modal Submit
 
 const modalSubmit = document.querySelector("#modal-submit-button");
 
-modalSubmit.addEventListener("click", function (event) {
-  event.preventDefault();
-});
+modalSubmit.addEventListener("click", function () {});
+
+// Modal Cancale
+
+const modalClose = document.querySelector("#modal-cancel-button");
+
+modalClose.addEventListener("click", setToDefault);
+
+// Modal

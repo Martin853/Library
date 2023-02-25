@@ -77,7 +77,7 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form id="modal-form">
+            <form id="modal-form" onsubmit="return false">
               <!-- Title -->
               <div class="mb-1">
                 <label for="book-title" class="form-label">Book Title</label>
@@ -112,6 +112,7 @@
                   class="form-control"
                   id="pages-number"
                   placeholder="Pages Number"
+                  min="1"
                   required
                 />
               </div>
@@ -146,10 +147,11 @@
           <div class="modal-footer">
             <button
               type="button"
+              id="modal-cancel-button"
               class="btn btn-secondary px-4"
               data-bs-dismiss="modal"
             >
-              Close
+              Cancel
             </button>
             <button
               type="submit"
