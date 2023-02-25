@@ -42,6 +42,7 @@ function addBookToScreen(book) {
   deleteButton.addEventListener("click", function () {
     bookCard.remove();
     bookLibrary.splice(bookLibrary.indexOf(book), 1);
+    updateCardHolder();
   });
 
   // Read Button
@@ -56,6 +57,11 @@ function addBookToScreen(book) {
   // Adding the book card to screen
   bookCard.style.display = "block";
   bookCardsHolder.appendChild(bookCard);
+}
+
+// Updating the book card holder with the library array
+function updateCardHolder() {
+  bookLibrary.forEach(addBookToScreen);
 }
 
 // Modal
