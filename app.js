@@ -129,7 +129,9 @@ modalSubmit.addEventListener("click", function () {
     checked
   );
 
-  bookLibrary.push(book);
+  if (book != null) {
+    bookLibrary.push(book);
+  }
   storeBookLibrary();
   addBookToScreen(book);
   setToDefault();
@@ -150,8 +152,10 @@ function storeBookLibrary() {
 function displayLocalStorage() {
   const bookLibraryArray = JSON.parse(localStorage.getItem("bookLibraryArray"));
   bookLibrary = bookLibraryArray;
-  for (let i = 0; i < bookLibraryArray.length; i++) {
-    addBookToScreen(bookLibraryArray[i]);
+  if (bookLibraryArray != null) {
+    for (let i = 0; i < bookLibraryArray.length; i++) {
+      addBookToScreen(bookLibraryArray[i]);
+    }
   }
 }
 
