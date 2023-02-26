@@ -21,6 +21,7 @@ function createBook(title, author, pages, language, haveRead) {
 function addBookToScreen(book) {
   // Creating th book card
   const bookCard = template.cloneNode(true);
+  bookCard.removeAttribute("id");
   const childNodes = bookCard.childNodes;
   const readButton = childNodes[9].firstElementChild;
   const deleteButton = childNodes[9].lastElementChild;
@@ -59,11 +60,6 @@ function addBookToScreen(book) {
   bookCardsHolder.appendChild(bookCard);
 }
 
-// Updating the book card holder with the library array
-function updateCardHolder() {
-  bookLibrary.forEach(addBookToScreen);
-}
-
 // Modal
 
 const bookTitleForm = document.querySelector("#book-title");
@@ -85,7 +81,45 @@ function setToDefault() {
 
 const modalSubmit = document.querySelector("#modal-submit-button");
 
-modalSubmit.addEventListener("click", function () {});
+modalSubmit.addEventListener("click", function () {
+  const bookTitleForm = document.querySelector("#book-title");
+  const bookAuthorForm = document.querySelector("#author-name");
+  const bookPagesForm = document.querySelector("#pages-number");
+  const bookLanguageForm = document.querySelector("#book-language");
+  const bookHaveReadForm = document.querySelector("#flexCheckDefault");
+  let checked;
+
+  const formInputs = [
+    bookTitleForm,
+    bookAuthorForm,
+    bookPagesForm,
+    bookLanguageForm,
+  ];
+
+  for (let i = 0; i < formInputs.length; i++) {
+    if (formInputs[i].value == "") {
+      return;
+    }
+  }
+
+  if (bookHaveReadForm.checked == true) {
+    checked = true;
+  } else {
+    checked = false;
+  }
+
+  const book = new createBook(
+    bookTitleForm.value,
+    bookAuthorForm.value,
+    bookPagesForm.value,
+    bookLanguageForm.value,
+    checked
+  );
+
+  bookLibrary.push(book);
+  addBookToScreen(book);
+  setToDefault();
+});
 
 // Modal Cancale
 

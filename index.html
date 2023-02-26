@@ -39,34 +39,12 @@
       </div>
 
       <!-- Books Cards Section -->
-      <div id="book-cards-holder" class="mt-4">
-        <!-- Template -->
-        <div
-          id="template-book-card"
-          class="bg-white border border-1 border-dark rounded p-3"
-        >
-          <h3>Title:</h3>
-          <h3>Author:</h3>
-          <h3>Pages:</h3>
-          <h3>Language:</h3>
-          <div class="d-grid gap-2 mt-2">
-            <button class="btn btn-outline-primary fw-semibold" type="button">
-              Read
-            </button>
-            <button
-              class="btn btn-outline-danger border-1 fw-semibold"
-              type="button"
-            >
-              Delete
-            </button>
-          </div>
-        </div>
-      </div>
+      <div id="book-cards-holder" class="mt-4"></div>
     </main>
 
     <!-- Modal -->
-    <div class="modal" id="modal" tabindex="-1">
-      <div class="modal-dialog">
+    <div class="modal fade" id="modal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">Add Book</h5>
@@ -158,11 +136,34 @@
               id="modal-submit-button"
               class="btn btn-success px-4"
               form="modal-form"
+              data-bs-dismiss="modal"
             >
               Save
             </button>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Template -->
+    <div
+      id="template-book-card"
+      class="bg-white border border-1 border-dark rounded p-3"
+    >
+      <h3>Title:</h3>
+      <h3>Author:</h3>
+      <h3>Pages:</h3>
+      <h3>Language:</h3>
+      <div class="d-grid gap-2 mt-2">
+        <button class="btn btn-outline-primary fw-semibold" type="button">
+          Read
+        </button>
+        <button
+          class="btn btn-outline-danger border-1 fw-semibold"
+          type="button"
+        >
+          Delete
+        </button>
       </div>
     </div>
 
