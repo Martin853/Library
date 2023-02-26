@@ -43,15 +43,28 @@ function addBookToScreen(book) {
   deleteButton.addEventListener("click", function () {
     bookCard.remove();
     bookLibrary.splice(bookLibrary.indexOf(book), 1);
-    updateCardHolder();
+    storeBookLibrary();
   });
 
   // Read Button
+
+  // Toggle Read
+  const toggleRead = (book) => {
+    book.haveRead = !book.haveRead;
+  };
+
   readButton.addEventListener("click", function () {
+    const bookIndex = bookLibrary.indexOf(book);
+    console.log(bookIndex);
+
     if (readButton.innerHTML == "Read") {
       readButton.innerHTML = "Unread";
+      toggleRead(bookLibrary[bookIndex]);
+      storeBookLibrary();
     } else {
       readButton.innerHTML = "Read";
+      toggleRead(bookLibrary[bookIndex]);
+      storeBookLibrary();
     }
   });
 
@@ -117,6 +130,7 @@ modalSubmit.addEventListener("click", function () {
   );
 
   bookLibrary.push(book);
+  storeBookLibrary();
   addBookToScreen(book);
   setToDefault();
 });
@@ -127,4 +141,18 @@ const modalClose = document.querySelector("#modal-cancel-button");
 
 modalClose.addEventListener("click", setToDefault);
 
-// Modal
+// Local Storage
+
+function storeBookLibrary() {
+  localStorage.setItem("bookLibraryArray", JSON.stringify(bookLibrary));
+}
+
+function displayLocalStorage() {
+  const bookLibraryArray = JSON.parse(localStorage.getItem("bookLibraryArray"));
+  bookLibrary = bookLibraryArray;
+  for (let i = 0; i < bookLibraryArray.length; i++) {
+    addBookToScreen(bookLibraryArray[i]);
+  }
+}
+
+displayLocalStorage();
