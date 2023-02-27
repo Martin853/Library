@@ -159,4 +159,6 @@ function displayLocalStorage() {
   }
 }
 
-displayLocalStorage();
+if (typeof localStorage.getItem("bookLibraryArray") !== "undefined") {
+  displayLocalStorage();
+}
