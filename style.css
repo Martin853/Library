@@ -30,3 +30,10 @@ body {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
+/* Bootstrap Customization */
+
+$theme-colors: (
+  "primary": #0074d9,
+  "danger": #ff4136,
+);

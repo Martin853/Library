@@ -151,7 +151,9 @@ function storeBookLibrary() {
 
 function displayLocalStorage() {
   const bookLibraryArray = JSON.parse(localStorage.getItem("bookLibraryArray"));
-  bookLibrary = bookLibraryArray;
+  if (bookLibraryArray != false) {
+    bookLibrary = bookLibraryArray;
+  }
   if (bookLibraryArray != null) {
     for (let i = 0; i < bookLibraryArray.length; i++) {
       addBookToScreen(bookLibraryArray[i]);
