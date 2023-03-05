@@ -151,9 +151,7 @@ function storeBookLibrary() {
 
 function displayLocalStorage() {
   const bookLibraryArray = JSON.parse(localStorage.getItem("bookLibraryArray"));
-  if (bookLibraryArray != false) {
-    bookLibrary = bookLibraryArray;
-  }
+  bookLibrary = bookLibraryArray;
   if (bookLibraryArray != null) {
     for (let i = 0; i < bookLibraryArray.length; i++) {
       addBookToScreen(bookLibraryArray[i]);
@@ -161,7 +159,10 @@ function displayLocalStorage() {
   }
 }
 
-if (localStorage.getItem("bookLibraryArray") === undefined || null) {
+if (
+  localStorage.getItem("bookLibraryArray") === null ||
+  localStorage.getItem("bookLibraryArray") === undefined
+) {
   storeBookLibrary();
 }
 
