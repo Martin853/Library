@@ -2,7 +2,7 @@
 
 <h2>A simple project for The Odin Project about creating an Library.</h2>
 <p>In this project i learned and used constructors.</p>
-<p><a href="https://martin853.github.io/Admin-Dashboard-TOP/">Link to website</a><p>
+<p><a href="https://martin853.github.io/Library/">Link to website</a><p>
 
 <h3>The skills that i used for this project were</h3>
 <ul>
