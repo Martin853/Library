@@ -6,15 +6,25 @@ const bookCardsHolder = document.querySelector("#book-cards-holder");
 
 let bookLibrary = [];
 
-// Book Constructor
+// Book Class
 
-function createBook(title, author, pages, language, haveRead) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.language = language;
-  this.haveRead = haveRead;
+class CreateBook {
+  constructor(title, author, pages, language, haveRead) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.language = language;
+    this.haveRead = haveRead;
+  }
 }
+
+// function createBook(title, author, pages, language, haveRead) {
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.language = language;
+//   this.haveRead = haveRead;
+// }
 
 // Add Books To Scren Function
 
@@ -121,7 +131,7 @@ modalSubmit.addEventListener("click", function () {
     checked = false;
   }
 
-  const book = new createBook(
+  const book = new CreateBook(
     bookTitleForm.value,
     bookAuthorForm.value,
     bookPagesForm.value,
